@@ -1,1 +1,18 @@
-<p>ex10 works!</p>
+<div>
+  <p>
+    Usuário:
+    <input [(ngModel)]="usuario">
+  </p>
+
+  <p>
+    Senha:
+    <input [(ngModel)]="senha">
+  </p>
+
+  <button (click)="entrar()" [disabled]="usuario === '' || senha === ''">
+    [ Entrar ]
+  </button>
+
+  <p>{{ mensagem }}</p>
+</div>
+
