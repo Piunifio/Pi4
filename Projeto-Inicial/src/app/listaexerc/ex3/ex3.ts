@@ -6,4 +6,10 @@ import { Component } from '@angular/core';
   templateUrl: './ex3.html',
   styleUrl: './ex3.scss',
 })
-export class Ex3 {}
+export class Ex3 {
+
+  imagemProduto = 'https://angular.io/assets/images/logos/angular/angular.svg';
+
+  descricaoImagem = 'Um A grandão';
+
+}
