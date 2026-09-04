@@ -9,11 +9,9 @@ import { Ex4 } from './ex4/ex4';
 import { Ex5 } from './ex5/ex5';
 import { Ex6 } from './ex6/ex6';
 import { Ex7 } from './ex7/ex7';
-import { Ex8 } from './ex8/ex8';
-import { Ex9 } from './ex9/ex9';
 
 @NgModule({
-  declarations: [Ex1, Ex2, Ex3, Ex4, Ex5, Ex6, Ex7, Ex8, Ex9],
+  declarations: [Ex1, Ex2, Ex3, Ex4, Ex5, Ex6, Ex7],
   imports: [CommonModule, ListaexercRoutingModule],
 })
 export class ListaexercModule {}

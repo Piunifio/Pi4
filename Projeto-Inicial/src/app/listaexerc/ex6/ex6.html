@@ -1,1 +1,4 @@
-<p>ex6 works!</p>
+<p>Quantidade: {{Quantidade}}</p>
+
+<button (click)="Aumentar()">[+]</button>
+<button (click)="Diminuir()" [disabled]= Quantidade == 0>[-]</button>

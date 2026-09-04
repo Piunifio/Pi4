@@ -8,14 +8,6 @@ import { Component } from '@angular/core';
 })
 export class Ex4 {
 
-  mensagem ='';
-
-  dizerOi() {
-  this.mensagem = 'Olá, Angular!';
-}
-
   formularioValido = true;
-
-
 
 }
