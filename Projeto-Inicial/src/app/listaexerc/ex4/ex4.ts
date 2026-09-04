@@ -14,9 +14,7 @@ export class Ex4 {
   this.mensagem = 'Olá, Angular!';
 }
 
-  formularioValido = false
-
-  bloqueado = 
+  formularioValido = true;
 
 
 

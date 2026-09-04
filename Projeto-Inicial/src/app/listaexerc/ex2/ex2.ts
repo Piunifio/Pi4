@@ -12,4 +12,6 @@ export class Ex2 {
   preco = 150;
   quantidade = 3;
 
+  total = this.preco * this.quantidade;
+
 }

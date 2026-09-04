@@ -10,6 +10,6 @@ export class Ex3 {
 
   imagemProduto = 'https://angular.io/assets/images/logos/angular/angular.svg';
 
-  descricaoImagem = 'Um A grandão';
+  descricaoImagem = 'Imagem do produto';
 
 }
