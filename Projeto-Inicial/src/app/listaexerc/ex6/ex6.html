@@ -1,4 +1,5 @@
 <p>Quantidade: {{Quantidade}}</p>
 
+<button (click)="Diminuir()" [disabled]="Quantidade === 0">[-]</button>
+
 <button (click)="Aumentar()">[+]</button>
-<button (click)="Diminuir()" [disabled]= Quantidade == 0>[-]</button>

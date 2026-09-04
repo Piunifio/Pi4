@@ -14,8 +14,8 @@ export class Ex6 {
   }
 
   Diminuir() {
-    if (this.Quantidade > 0) {
+  if (this.Quantidade > 0){
     this.Quantidade--
-  }
+}
 }
 }
