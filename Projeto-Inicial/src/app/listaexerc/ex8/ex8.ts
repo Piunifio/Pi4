@@ -6,4 +6,13 @@ import { Component } from '@angular/core';
   templateUrl: './ex8.html',
   styleUrl: './ex8.scss',
 })
-export class Ex8 {}
+export class Ex8 {
+produto = 'Mouse Gamer';
+preco = 150;
+quantidade = 2;
+
+Total() {
+  return this.preco * this.quantidade;
+}
+
+}

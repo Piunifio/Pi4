@@ -1,1 +1,17 @@
-<p>ex9 works!</p>
+<div>
+    <p>
+        Produto:
+        <input [(ngModel)]="produto">
+    </p>
+
+    <p> Produto: {{produto}} </p>
+
+    <p> Estoque: {{estoque}} </p>
+
+    <button (click)="diminuir()" [disabled]= "estoque === 0">[-]</button>
+
+    <button (click)="aumentar()">[+]</button>
+
+
+</div>
+ 
