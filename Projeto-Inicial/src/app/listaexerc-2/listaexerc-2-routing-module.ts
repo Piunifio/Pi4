@@ -1,0 +1,86 @@
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { Ex1 } from './ex1/ex1';
+import { Ex2 } from './ex2/ex2';
+import { Ex3 } from './ex3/ex3';
+import { Ex4 } from './ex4/ex4';
+import { Ex5 } from './ex5/ex5';
+import { Ex6 } from './ex6/ex6';
+import { Ex7 } from './ex7/ex7';
+import { Ex8 } from './ex8/ex8';
+import { Ex9 } from './ex9/ex9';
+import { Ex10 } from './ex10/ex10';
+import { Ex11 } from './ex11/ex11';
+import { Ex12 } from './ex12/ex12';
+import { Ex13 } from './ex13/ex13';
+import { Ex14 } from './ex14/ex14';
+import { Ex15 } from './ex15/ex15';
+
+const routes: Routes = [
+  {
+        path: 'ex1',
+        component: Ex1
+        },
+      {
+        path: 'ex2',
+        component: Ex2
+        },
+      {
+        path: 'ex3',
+        component: Ex3
+        },
+      {
+        path: 'ex4',
+        component: Ex4
+        },
+      {
+        path: 'ex5',
+        component: Ex5
+        },
+      {
+        path: 'ex6',
+        component: Ex6
+        },
+      {
+        path: 'ex7',
+        component: Ex7
+        },
+      {
+        path: 'ex8',
+        component: Ex8
+        },
+      {
+        path: 'ex9',
+        component: Ex9
+       },
+      {
+        path: 'ex10',
+        component: Ex10
+      },
+      {
+        path: 'ex11',
+        component: Ex11
+      },
+      {
+        path: 'ex12',
+        component: Ex12
+      },
+      {
+        path: 'ex13',
+        component: Ex13
+      },
+      {
+        path: 'Ex14',
+        component: Ex14
+      },
+      {
+        path: 'Ex15',
+        component: Ex15
+      }
+];
+
+@NgModule({
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule],
+})
+export class Listaexerc2RoutingModule {}

@@ -15,6 +15,10 @@ const routes: Routes = [
   {
     path: 'listaexerc',
     loadChildren: () => import('./listaexerc/listaexerc-module').then(m => m.ListaexercModule)
+  },
+  {
+    path: 'listaexerc-2',
+    loadChildren: () => import('./listaexerc-2/listaexerc-2-module').then(m => m.Listaexerc2Module)
   }
 ];
 
