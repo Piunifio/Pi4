@@ -6,4 +6,15 @@ import { Component } from '@angular/core';
   templateUrl: './ex4.html',
   styleUrl: './ex4.scss',
 })
-export class Ex4 {}
+export class Ex4 {
+  nomeProduto = "Teclado";
+  quantidadeEstoque = 5;
+  
+  adicionar() {
+    this.quantidadeEstoque++;
+  }
+
+  remover() {
+    this.quantidadeEstoque--;
+  }
+}
