@@ -6,4 +6,10 @@ import { Component } from '@angular/core';
   templateUrl: './ex1.html',
   styleUrl: './ex1.scss',
 })
-export class Ex1 {}
+export class Ex1 {
+  mensagemVisivel: boolean = false;
+
+  alterar(): void {
+    this.mensagemVisivel = !this.mensagemVisivel;
+  }
+}

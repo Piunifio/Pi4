@@ -1,1 +1,13 @@
-<p>ex2 works!</p>
+<p *ngIf="usuarioLogado; else acessoNegado">
+  Usuário autenticado
+</p>
+
+<ng-template #acessoNegado>
+  <p>Acesso não autorizado</p>
+</ng-template>
+
+<button (click)="alterar()">
+  {{ usuarioLogado ? 'Sair' : 'Entrar' }}
+</button>
+
+

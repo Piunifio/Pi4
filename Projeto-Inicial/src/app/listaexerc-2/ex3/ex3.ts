@@ -6,4 +6,14 @@ import { Component } from '@angular/core';
   templateUrl: './ex3.html',
   styleUrl: './ex3.scss',
 })
-export class Ex3 {}
+export class Ex3 {
+  idade = 0
+
+  aumentarIdade() {
+    this.idade++;
+  }
+
+  diminuirIdade() {
+      this.idade--;
+  }
+}
