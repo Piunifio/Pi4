@@ -1,1 +1,8 @@
-<p>ex5 works!</p>
+<h3>Lista de Pessoas</h3>
+
+<li *ngFor="let nome of nomes; let i = index; let f = first; let l = last">
+    {{ i + 1}} - {{ nome }}
+
+    <span *ngIf="f"> (Primeiro da Lista)</span>
+    <span *ngIf="l"> (Último da Lista)</span>
+</li>
