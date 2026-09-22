@@ -1,0 +1,19 @@
+/* Posição par */
+.linha-par {
+    background-color: #88e788;
+}
+
+/* Posição impar */
+.linha-impar {
+    background-color: #ff7f7f;
+}
+
+/* Destaque da primeira */
+.primeira {
+    font-weight: bold;
+}
+
+/* Borda da última */
+.ultima {
+    border: 2px dashed #000;
+}

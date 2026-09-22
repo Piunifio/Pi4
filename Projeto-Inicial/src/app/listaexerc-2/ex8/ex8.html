@@ -1,1 +1,12 @@
-<p>ex8 works!</p>
+<h3>Lista de Produtos em Estoque</h3>
+
+<div *ngFor="let prod of produtos; let i = index">
+    <p>
+        <strong>#{{ i + 1}}</strong> -
+        {{ prod.nome }} |
+        Preço: {{ prod.preco | currency:'BRL':'symbol' }} |
+        Qtd: {{ prod.quantidade }} |
+        <strong>Total em Estoque: {{ prod.preco * prod.quantidade | currency:'BRL':'symbol' }}</strong>
+    </p>
+    <hr>
+</div>

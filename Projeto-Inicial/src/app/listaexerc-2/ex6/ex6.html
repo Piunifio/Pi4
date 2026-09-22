@@ -1,1 +1,17 @@
-<p>ex6 works!</p>
+<h3>Gerenciador de Lista de Nomes</h3>
+
+<!-- mostra total de nomes -->
+<p>Total de nomes: {{ nomes.length }}</p>
+
+<!-- Botões de Interação -->
+<button (click)="removerUltimo()" [disabled]="nomes.length === 0">Remover Último</button>
+<button (click)="limparTudo()" [disabled]="nomes.length === 0">Limpar Tudo</button>
+<button (click)="restaurar()">Restaurar Lista</button>
+
+<!-- Lista -->
+<ul *ngIf="nomes.length > 0">
+    <li *ngFor="let nome of nomes"> {{ nome }} </li>
+</ul>
+
+    <!-- Vazio -->
+<p *ngIf="nomes.length === 0">Nenhum nome cadastrado</p>

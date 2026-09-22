@@ -1,1 +1,11 @@
-<p>ex7 works!</p>
+<h3>Disciplinas do Semestre</h3>
+
+<p *ngFor="let disc of disciplinas; let e = even; let o = odd; let f = first; let l = last"
+    [ngClass]="{
+        'linha-par': e,
+        'linha-impar': o,
+        'primeira': f,
+        'ultima': l 
+    }">
+    {{ disc }}
+</p>
