@@ -1,0 +1,121 @@
+.painel-container {
+  max-width: 700px;
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.resumo {
+  display: flex;
+  gap: 20px;
+  background-color: #e3f2fd;
+  padding: 10px 15px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+.controles {
+  margin-bottom: 20px;
+
+  button {
+    padding: 8px 14px;
+    background-color: #444;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+}
+
+.lista-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.card-projeto {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+
+  h3 {
+    margin: 10px 0 5px 0;
+  }
+
+  p {
+    margin: 5px 0;
+  }
+}
+
+.topo-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .posicao {
+    font-weight: bold;
+    color: #666;
+  }
+
+  /* Requisito 5 */
+  .selo-entregue {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: bold;
+  }
+}
+
+/* Requisito 4: Classes CSS diferentes para cada status */
+.select-status {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+
+  &.planejamento { background-color: #fff3e0; color: #e65100; }
+  &.desenvolvimento { background-color: #e1f5fe; color: #0288d1; }
+  &.testes { background-color: #f3e5f5; color: #7b1fa2; }
+  &.concluído { background-color: #e8f5e9; color: #2e7d32; }
+}
+
+.bloco-nota {
+  margin-top: 10px;
+
+  /* Requisito 6 */
+  .sem-nota {
+    color: #777;
+    font-style: italic;
+  }
+
+  /* Requisito 7: Nota superior ou igual a 7 */
+  .nota-alta {
+    color: #2e7d32;
+    font-weight: bold;
+    background-color: #c8e6c9;
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+
+  /* Requisito 8: Nota inferior a 6 */
+  .nota-baixa {
+    color: #c62828;
+    font-weight: bold;
+    background-color: #ffcdd2;
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+}
+
+/* Requisito 13 */
+.mensagem-vazia {
+  text-align: center;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px dashed #ccc;
+  border-radius: 6px;
+  color: #666;
+}

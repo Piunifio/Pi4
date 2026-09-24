@@ -1,1 +1,75 @@
-<p>ex15 works!</p>
+<div class="painel-container">
+  <h2>Painel de Projetos Integradores</h2>
+
+  <!-- Resumo de Projetos (Requisitos 11 e 12) -->
+  <div class="resumo">
+    <p><b>Total de Projetos:</b> {{ totalProjetos }}</p>
+    <p><b>Concluídos:</b> {{ totalConcluidos }}</p>
+  </div>
+
+  <!-- Filtro para Ocultar (Requisito 9) -->
+  <div class="controles">
+    <button (click)="alterarExibicaoConcluidos()">
+      @if (ocultarConcluidos) {
+        Mostrar Projetos Concluídos
+      } @else {
+        Ocultar Projetos Concluídos
+      }
+    </button>
+  </div>
+
+  <!-- Lista de Projetos (Requisito 1, 14 e 15) -->
+  <div class="lista-cards">
+    @for (proj of listaProjetos; track proj.id; let i = $index) {
+      
+      @if (!ocultarConcluidos || proj.status !== 'concluído') {
+        <div class="card-projeto">
+          
+          <!-- Posição do projeto (Requisito 2) -->
+          <div class="topo-card">
+            <span class="posicao">#{{ i + 1 }}</span>
+            
+            <!-- Entregue (Requisito 5) -->
+            @if (proj.entregue) {
+              <span class="selo-entregue">Projeto entregue</span>
+            }
+          </div>
+
+          <!-- Dados do Projeto (Requisito 3) -->
+          <h3>{{ proj.titulo }}</h3>
+          <p><b>Equipe:</b> {{ proj.equipe }}</p>
+
+          <!-- Status com Classe Dinâmica (Requisito 4 e 10) -->
+          <p>
+            <b>Status:</b>
+            <select [value]="proj.status" (change)="mudarStatus(proj, $event)" class="select-status {{ proj.status }}">
+              <option value="planejamento">Planejamento</option>
+              <option value="desenvolvimento">Desenvolvimento</option>
+              <option value="testes">Testes</option>
+              <option value="concluído">Concluído</option>
+            </select>
+          </p>
+
+          <!-- Nota e Destaques (Requisitos 6, 7 e 8) -->
+          <div class="bloco-nota">
+            <b>Nota: </b>
+            @if (proj.nota === null || proj.nota === undefined) {
+              <span class="sem-nota">Nota ainda não definida</span>
+            } @else {
+              <span [class.nota-alta]="proj.nota >= 7" [class.nota-baixa]="proj.nota < 6">
+                {{ proj.nota }}
+              </span>
+            }
+          </div>
+
+        </div>
+      }
+
+    } @empty {
+      <!-- Mensagem lista vazia (Requisito 13) -->
+      <div class="mensagem-vazia">
+        <p>Nenhum projeto cadastrado no momento.</p>
+      </div>
+    }
+  </div>
+</div>
