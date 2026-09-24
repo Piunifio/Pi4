@@ -1,0 +1,48 @@
+.resumo {
+  background-color: #f1f3f5;
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  max-width: 500px;
+}
+
+.mensagem-vazia {
+  color: #6c757d;
+  font-style: italic;
+}
+
+/* Classes de acordo com a prioridade */
+.prio-alta {
+  color: #d9534f;
+}
+
+.prio-media {
+  color: #f0ad4e;
+}
+
+.prio-baixa {
+  color: #5cb85c;
+}
+
+/* Destaque para tarefas concluídas */
+.texto-concluido {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.concluida-bg {
+  opacity: 0.85;
+}
+
+button {
+  cursor: pointer;
+  padding: 6px 12px;
+  border-radius: 4px;
+  border: 1px solid #c99;
+  background-color: #9fd399;
+  font-weight: bold;
+  
+  &:hover {
+    background-color: #e2e6;
+  }
+} 

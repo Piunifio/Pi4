@@ -1,1 +1,49 @@
-<p>ex13 works!</p>
+<h3>Lista de Tarefas</h3>
+
+<div class="resumo">
+  <p><strong>Total de Tarefas:</strong> {{ totalTarefas }}</p>
+  <p><strong>Concluídas:</strong> {{ tarefasConcluidas }} | <strong>Pendentes:</strong> {{ tarefasPendentes }}</p>
+</div>
+
+<!-- Mensagem qnd nao ter tarefa -->
+<p *ngIf="tarefas.length === 0" class="mensagem-vazia">
+  Nenhuma tarefa cadastrada no momento.
+</p>
+
+<!-- Todas as tarefas e responsaveis -->
+<div *ngFor="let tarefa of tarefas; let i = index" 
+     class="card-tarefa"
+     [ngClass]="{ 'concluida-bg': tarefa.concluida }">
+  
+  <p>
+    <strong>#{{ i + 1 }}</strong> - 
+    <!-- 3. Destaque visualmente as tarefas concluídas (riscado) -->
+    <span [ngClass]="{ 'texto-concluido': tarefa.concluida }">
+      {{ tarefa.titulo }}
+    </span> 
+    <br>
+
+    Responsável: <strong>{{ tarefa.responsavel }}</strong> | 
+    
+    <!-- Aplica uma classe por prioridade -->
+    Prioridade: 
+    <span [ngClass]="{
+      'prio-alta': tarefa.prioridade === 'alta',
+      'prio-media': tarefa.prioridade === 'média',
+      'prio-baixa': tarefa.prioridade === 'baixa'
+    }">
+      <strong>{{ tarefa.prioridade | uppercase }}</strong>
+    </span> | 
+
+    <!-- Concluida ou pendente -->
+    Situação: 
+    <strong>{{ tarefa.concluida ? 'Concluída' : 'Pendente' }}</strong>
+  </p>
+
+  <!-- Botão para alterar -->
+  <button (click)="alternarSituacao(tarefa)">
+    {{ tarefa.concluida ? 'Marcar como Pendente' : 'Marcar como Concluída' }}
+  </button>
+
+  <hr>
+</div>
