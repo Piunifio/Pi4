@@ -1,1 +1,23 @@
-<p>ex9 works!</p>
+<h3>Classificação dos Produtos</h3>
+
+<div *ngFor="let prod of produtos; let i = index">
+    <p>
+        <strong>#{{ i + 1 }}</strong> - {{ prod.nome }} |
+        preço: {{ prod.preco | currency:'BRL':'symbol' }} |
+        Quantidade: {{ prod.quantidade }} |
+
+        <!-- Utilizando a classe c base na condicao -->
+        <span [ngClass]="{
+            'vermelho': prod.quantidade === 0,
+            'amarelo': prod.quantidade >= 1 && prod.quantidade <= 5,
+            'verde': prod.quantidade > 5
+        }">
+
+            <!-- condicoes encadeadas com *ngIf -->
+             <strong *ngIf="prod.quantidade === 0">Sem estoque</strong>
+             <strong *ngIf="prod.quantidaade >= 1 && prod.quantidade <= 5">Estoque baixo</strong>
+             <strong *ngIf="prod.quantidade > 5">Estoque disponível</strong>
+        </span>
+    </p>
+    <hr>
+</div>
