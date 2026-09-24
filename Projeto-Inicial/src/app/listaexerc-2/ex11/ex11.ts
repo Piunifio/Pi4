@@ -1,9 +1,32 @@
 import { Component } from '@angular/core';
 
+export interface Produto {
+  id: number;
+  nome: string;
+  preco: number;
+  quantidade: number;
+  promocao: boolean;
+}
+
 @Component({
   selector: 'app-ex11',
   standalone: false,
   templateUrl: './ex11.html',
   styleUrl: './ex11.scss',
 })
-export class Ex11 {}
+export class Ex11 {
+  somenteDisponiveis = false
+
+  produtos: Produto[] = [
+    { id: 1, nome: 'Mouse', preco: 150.00, quantidade: 10, promocao: true },
+    { id: 2, nome: 'Teclado', preco: 350.00, quantidade: 5, promocao: false },
+    { id: 3, nome: 'Fone', preco: 240.00, quantidade: 3, promocao: true },
+    { id: 4, nome: 'Monitor', preco: 990.90, quantidade: 0, promocao: false },
+    { id: 5, nome: 'Microfone', preco: 375.00, quantidade: 7, promocao: false }
+  ];
+
+  // altera o filtro de exibicao
+  alterarFiltro() {
+    this.somenteDisponiveis = !this.somenteDisponiveis;
+  }
+}
