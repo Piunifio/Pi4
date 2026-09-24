@@ -70,11 +70,11 @@ const routes: Routes = [
         component: Ex13
       },
       {
-        path: 'Ex14',
+        path: 'ex14',
         component: Ex14
       },
       {
-        path: 'Ex15',
+        path: 'ex15',
         component: Ex15
       }
 ];

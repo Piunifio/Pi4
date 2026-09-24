@@ -1,1 +1,89 @@
-<p>ex14 works!</p>
+<div class="box-main">
+  <h2>Sintaxe Moderna</h2>
+
+  <!-- Exercicio 11 -->
+  <div class="bloco">
+    <h3>Ex 11: Filtro de Produtos</h3>
+    <button (click)="mudarFiltro()" class="btn-acao">
+      @if (apenasDisponiveis) {
+        Mostrar Todos
+      } @else {
+        Mostrar Apenas Disponíveis
+      }
+    </button>
+
+    <ul>
+      @for (prod of produtosFiltro; track prod.id) {
+        @if (!apenasDisponiveis || prod.quantidade > 0) {
+          <li>
+            {{ prod.nome }} - R$ {{ prod.preco }} | Qtd: {{ prod.quantidade }}
+          </li>
+        }
+      } @empty {
+        <li>Nenhum produto cadastrado na lista.</li>
+      }
+    </ul>
+  </div>
+
+  <!-- Exercicio 12 -->
+  <div class="bloco">
+    <h3>Ex 12: Cadastro de Produtos</h3>
+
+    <div class="campos-form">
+      <input type="text" placeholder="Nome" [(ngModel)]="novoNome" />
+      <input type="number" placeholder="Quantidade" [(ngModel)]="novaQtd" />
+      <button (click)="cadastrar()">Cadastrar</button>
+    </div>
+
+    @if (msgErro) {
+      <p class="txt-erro">{{ msgErro }}</p>
+    }
+
+    <ul>
+      @for (item of listaCadastro; track item.id; let i = $index) {
+        <li>
+          {{ item.nome }} - Quantidade: {{ item.quantidade }}
+          <button (click)="excluir(i)" class="btn-del">Excluir</button>
+        </li>
+      } @empty {
+        <li>A lista de cadastro está vazia.</li>
+      }
+    </ul>
+  </div>
+
+  <!-- Exercicio 13 -->
+  <div class="bloco">
+    <h3>Ex 13: Lista de Tarefas</h3>
+
+    <ul>
+      @for (t of listaTarefas; track t.id) {
+        <li [class.concluida]="t.concluida">
+          <span>
+            <b>{{ t.titulo }}</b> ({{ t.responsavel }}) - Prioridade: {{ t.prioridade }}
+          </span>
+          
+          <button (click)="mudarStatus(t)">
+            @if (t.concluida) {
+              Reabrir
+            } @else {
+              Concluir
+            }
+          </button>
+        </li>
+      } @empty {
+        <li>Sem tarefas no momento.</li>
+      }
+    </ul>
+  </div>
+
+  <!-- Diferencas percebidas -->
+  <div class="bloco">
+    <h3>Diferenças Percebidas entre as Sintaxes</h3>
+    <p>
+      1. A leitura do código fica bem mais simples porque não precisa usar a tag &lt;ng-template&gt; nem &lt;ng-container&gt; para criar o else do *ngIf.
+    </p>
+    <p>
+      2. O &#64;for obriga o uso do track, o que melhora o desempenho ao renderizar listas, e o bloco &#64;empty facilita para mostrar uma mensagem quando a lista está vazia sem precisar fazer um *ngIf conferindo o length.
+    </p>
+  </div>
+</div>
