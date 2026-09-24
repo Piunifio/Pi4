@@ -1,1 +1,31 @@
-<p>ex10 works!</p>
+<h3>Promoção Dinâmica</h3>
+
+<div *ngFor="let prod of produtos; let i = index">
+    <p>
+        <strong>#{{ i + 1 }}</strong> -
+
+        <!-- mostrar produtos em promocao em negrito -->
+         <span [style.font-weigt]="prod.promocao ? 'bold' : 'normal'">
+            {{ prod.nome }}
+         </span> |
+
+        <!-- o ngStyle aplica cor diferente preco promoção -->
+         <span [ngStyle]="{ 'color': prod.promocao ? 'purple' : 'black', 'font-weight': prod.promocao ? 'bold' : 'normal'}">
+            Preço: {{ prod.preco | currency:'BRL':'R$' }}
+         </span> |
+
+        Quantidade: {{ prod.quantidade }}
+
+        <!-- mostrar produto em promocao quando propriedade for verddeira -->
+         <span *ngIf="prod.promocao" class="badge-promocao">
+            | 🔥 <strong>Produto em promoção!</strong>
+         </span>
+    </p>
+
+    <!-- botao on/off a promocao de cadaa prod -->
+     <button (click)="alterarPromocao(prod)">
+        {{ prod.promocao ? 'Desativar Promoção' : 'Ativar Promoção' }}
+     </button>
+     
+     <hr>
+</div>
