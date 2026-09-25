@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-app-cabecalho',
@@ -6,4 +6,7 @@ import { Component } from '@angular/core';
   templateUrl: './app-cabecalho.html',
   styleUrl: './app-cabecalho.scss',
 })
-export class AppCabecalho {}
+export class AppCabecalho {
+  @Input()
+  topo = "Loja Angular 1";
+}
